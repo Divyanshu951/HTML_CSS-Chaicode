@@ -120,4 +120,60 @@ h1 {
 }
 
 .sessions-card p {
+  color: rgb(44, 44, 44);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.sessions-card .number {
+  color: rgb(83, 49, 156);
+  font-size: 54px;
+  margin-top: 10px;
+}
+
+.description {
+  line-height: 24px;
+  margin: 20px 0;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%;
+  background: rgb(83, 49, 156);
+  outline: none;
+  height: 20px;
+  opacity: 0.7;
+  border-radius: 15px;
+}
+
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 12px;
+  background: rgb(250, 247, 255);
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.slider-values {
+  display: flex;
+  list-style-type: none;
+  padding: 10px 0;
+  justify-content: space-between;
+}
+
+.slider-values li {
+  font-weight: bold;
+  color: rgb(166, 166, 166);
 }
