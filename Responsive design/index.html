@@ -4,6 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Design</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #14120b;
+        color: #edecec;
+        font-family: sans-serif;
+      }
+
+      .nav {
+        border: 1px solid #edecec;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style-type: none;
+        gap: 20px;
+      }
+
+      .nav a {
+        color: #edecec;
+        text-decoration: none;
+      }
+
+      .nav a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 480px) {
+        .nav {
+          flex-direction: column;
+        }
+
+        .nav h1 {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <h1><i>Kalyan</i></h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
 </html>
