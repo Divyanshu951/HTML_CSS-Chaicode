@@ -1,3 +1,33 @@
+:root {
+  /* --- COLORS --- */
+  /* Backgrounds */
+  --bg-main: #14120b;
+  --bg-surface: #1b1913;
+
+  /* Text */
+  --text-main: #edecec;
+  --text-muted: color-mix(in oklab, var(--text-main) 60%, transparent);
+  --text-accent: #f54e00;
+
+  /* Borders */
+  --border: color-mix(in oklab, var(--text-main) 20%, transparent);
+
+  /* --- TYPOGRAPHY --- */
+  --ff-sans: system-ui, -apple-system, sans-serif;
+  --ff-display: "Space Grotesk", sans-serif;
+
+  /* --- LAYOUT & SPACING --- */
+  --site-max-width: 1300px;
+  --header-height: 52px;
+
+  /* --- BORDER RADIUS --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 24px;
+  --radius-pill: 100px;
+}
+
+/* --- RESET & GLOBAL --- */
 * {
   padding: 0;
   margin: 0;
@@ -5,26 +35,47 @@
 }
 
 body {
-  background-color: #14120b;
-  color: #edecec;
-  font-family: sans-serif;
+  padding-top: var(--header-height);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--ff-sans);
 }
 
-/* HEADER */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-.site-header {
-  background-color: #14120b;
-  max-width: 1300px;
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* --- UTILITIES --- */
+.container {
+  max-width: var(--site-max-width);
   width: 100%;
+  margin: 0 auto;
+}
+
+/* --- HEADER --- */
+.site-header {
+  background-color: var(--bg-main);
+  max-width: var(--site-max-width);
+  width: 100%;
+  height: var(--header-height);
+
+  /* Positioning */
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1000;
 }
 
 .site-header .nav {
-  margin: 0 auto;
   padding: 10px 0;
+  height: 100%;
 }
 
 .nav-list {
@@ -32,6 +83,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
 }
 
 .nav-item {
@@ -45,9 +97,11 @@ body {
 
 .page-title {
   text-transform: uppercase;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--ff-display);
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
+  margin-left: 8px;
 }
 
 .nav .nav-links {
@@ -56,48 +110,44 @@ body {
 }
 
 .nav-links .nav-link {
-  cursor: pointer;
   font-size: 0.875rem;
-  color: #edecec;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  opacity: 0.7;
-}
-
-.nav-btn .btn {
-  padding: 0.4em 0.75em 0.42em;
-  border: 1px solid color-mix(in oklab, #edecec 20%, transparent);
-  border-radius: 22px;
   cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
+.nav-link:hover,
 .nav-btn .btn:hover {
   opacity: 0.7;
 }
 
-.nav-btn .btn a {
-  text-decoration: none;
+/* Header Buttons */
+.nav-btn .btn {
+  padding: 0.4em 0.75em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .sign-in-btn {
-  background-color: #14120b;
-  color: #edecec;
+  background-color: var(--bg-main);
+  color: var(--text-main);
   margin-right: 10px;
 }
 
 .download-btn {
-  color: #14120b;
+  background-color: var(--text-main);
+  color: var(--bg-main);
 }
 
-/* MAIN */
+/* --- MAIN CONTENT --- */
 main {
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: var(--site-max-width);
   width: 100%;
 }
 
+/* --- HERO SECTION --- */
 .hero {
   margin-bottom: 2.5rem;
 }
@@ -110,16 +160,16 @@ main {
   margin-top: 112px;
 }
 
-.hero .cta-button a {
-  color: #1b1913;
-  text-decoration: none;
-}
-
 .hero .cta-button {
+  display: inline-block;
   padding: 10px 20px;
   font-size: 1rem;
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   border: none;
+  background-color: var(--text-main);
+  color: var(--bg-surface);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .hero .cta-button:hover {
@@ -127,8 +177,14 @@ main {
 }
 
 .hero img {
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin-top: 56px;
+  width: 100%;
+}
+
+/* --- PARTNERS SECTION --- */
+.partners-container {
+  padding-bottom: 100px;
 }
 
 .partners-container p {
@@ -144,14 +200,77 @@ main {
 
 .logo-garden .partner-brand {
   display: flex;
+  flex-grow: 1;
   justify-content: center;
   align-items: center;
   height: 6.25rem;
-  background-color: #1b1913;
-  border-radius: 8px;
-  padding: 10px 0;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 10px;
 }
 
 .logo-garden .partner-brand img {
   height: 2.5rem;
+  width: auto;
+}
+
+/* --- FEATURES SECTION --- */
+.features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding-bottom: 100px;
+}
+
+.feature {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  display: flex;
+}
+
+.feature .Description {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.feature .Description p {
+  line-height: 1.4;
+  font-size: 1.375rem;
+}
+
+.Description p span {
+  display: block;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.Description .feature-button {
+  margin-top: 1.4rem;
+  color: var(--text-accent);
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+
+.Description .feature-button:hover {
+  opacity: 0.7;
+}
+
+.feature .img-feature {
+  flex-basis: 60%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature .img-feature img {
+  border-radius: var(--radius-sm);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }

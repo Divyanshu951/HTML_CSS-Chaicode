@@ -41,6 +41,7 @@ span {
     font-size: 70px;
   }
 }
+
 @media only screen and (max-width: 800px) {
   div {
     width: 90%;

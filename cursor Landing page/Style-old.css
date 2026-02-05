@@ -1,0 +1,214 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 52px;
+  background-color: #14120b;
+  color: #edecec;
+  font-family: sans-serif;
+}
+
+/* HEADER */
+
+.site-header {
+  background-color: #14120b;
+  max-width: 1300px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.site-header .nav {
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.page-logo {
+  width: 32px;
+}
+
+.page-title {
+  text-transform: uppercase;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav .nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links .nav-link {
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #edecec;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.nav-btn .btn {
+  padding: 0.4em 0.75em;
+  border: 1px solid color-mix(in oklab, #edecec 20%, transparent);
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+.nav-btn .btn:hover {
+  opacity: 0.7;
+}
+
+.nav-btn .btn a {
+  text-decoration: none;
+}
+
+.sign-in-btn {
+  background-color: #14120b;
+  color: #edecec;
+  margin-right: 10px;
+}
+
+.download-btn {
+  color: #14120b;
+}
+
+/* MAIN */
+main {
+  margin: 0 auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.hero {
+  margin-bottom: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.65rem;
+  line-height: 1.2;
+  font-weight: 400;
+  margin-bottom: 23px;
+  margin-top: 112px;
+}
+
+.hero .cta-button a {
+  color: #1b1913;
+  text-decoration: none;
+}
+
+.hero .cta-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 24px;
+  border: none;
+}
+
+.hero .cta-button:hover {
+  opacity: 0.8;
+}
+
+.hero img {
+  border-radius: 4px;
+  margin-top: 56px;
+}
+
+/* PARTHERS SECTION */
+
+.partners-container {
+  padding-bottom: 100px;
+}
+
+.partners-container p {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.logo-garden {
+  display: flex;
+  gap: 20px;
+}
+
+.logo-garden .partner-brand {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  height: 6.25rem;
+  background-color: #1b1913;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+.logo-garden .partner-brand img {
+  height: 2.5rem;
+}
+
+/* FEATURES */
+
+.features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.feature {
+  background-color: #1b1913;
+  border-radius: 4px;
+  display: flex;
+}
+
+.feature .Description {
+  flex-basis: 40%;
+  align-content: center;
+  padding: 0 15px;
+}
+
+.feature .Description p {
+  line-height: 1.4;
+  font-size: 1.375rem;
+}
+
+.Description p span {
+  display: block;
+  color: color-mix(in oklab, #edecec 60%, transparent);
+}
+
+.Description .feature-button {
+  margin-top: 1.4rem;
+  color: #f54e00;
+  cursor: pointer;
+}
+
+.Description .feature-button:hover {
+  opacity: 0.7;
+}
+
+.feature .img-feature {
+  padding: 20px;
+}
+
+.feature .img-feature img {
+  border-radius: 4px;
+}
